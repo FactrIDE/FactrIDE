@@ -1,0 +1,140 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFrameworks>net48;netcoreapp3.0</TargetFrameworks>
+    <UseWPF>true</UseWPF>
+    <LangVersion>8.0</LangVersion>
+    <RootNamespace>FactrIDE</RootNamespace>
+    <AssemblyName>FactrIDE</AssemblyName>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <StartupObject>FactrIDE.EntryPoint</StartupObject>
+    <ApplicationIcon>Icon_256x.ico</ApplicationIcon>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+    <NoWarn>RCS1057;RCS1003;RCS1036</NoWarn>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(TargetFramework)' == 'netcoreapp3.0' and '$(CompileConfig )' == 'RELEASE'">
+    <PublishSingleFile>true</PublishSingleFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Lua-Mode.xshd" />
+    <EmbeddedResource Include="Resources\Lua.xshd" />
+    <Resource Include="Resources\Icons\Icon_256x.png" />
+    <Resource Include="Resources\GitUI\BrowseFileExplorer.png" />
+    <Resource Include="Resources\GitUI\CloneRepoGit.png" />
+    <Resource Include="Resources\GitUI\Pull.png" />
+    <Resource Include="Resources\GitUI\Push.png" />
+    <Resource Include="Resources\GitUI\RepoStateClean.png" />
+    <Resource Include="Resources\GitUI\RepoStateDirty.png" />
+    <Resource Include="Resources\GitUI\RepoStateDirtySubmodules.png" />
+    <Resource Include="Resources\GitUI\RepoStateMixed.png" />
+    <Resource Include="Resources\GitUI\RepoStateStaged.png" />
+    <Resource Include="Resources\GitUI\RepoStateUnknown.png" />
+    <Resource Include="Resources\GitUI\RepoStateUntrackedOnly.png" />
+    <Resource Include="Resources\GitUI\star.png" />
+    <Resource Include="Resources\grid.png" />
+    <Resource Include="Resources\Factorio\Icon.png" />
+    <Resource Include="Resources\VS17\AddFile_16x.png" />
+    <Resource Include="Resources\VS17\AddFolder_16x.png" />
+    <Resource Include="Resources\VS17\AddImage_16x.png" />
+    <Resource Include="Resources\VS17\AddReference_16x.png" />
+    <Resource Include="Resources\VS17\Application_16x.png" />
+    <Resource Include="Resources\VS17\Cancel_16x.png" />
+    <Resource Include="Resources\VS17\Checkmark_16x.png" />
+    <Resource Include="Resources\VS17\Copy_16x.png" />
+    <Resource Include="Resources\VS17\Cut_16x.png" />
+    <Resource Include="Resources\VS17\Exclamation_grey_16x.png" />
+    <Resource Include="Resources\VS17\FactorioProject_16x.png" />
+    <Resource Include="Resources\VS17\FactrIDESolution_16x.png" />
+    <Resource Include="Resources\VS17\FileError_16x.png" />
+    <Resource Include="Resources\VS17\FileExclude_16x.png" />
+    <Resource Include="Resources\VS17\FileOK_16x.png" />
+    <Resource Include="Resources\VS17\FileWarning_16x.png" />
+    <Resource Include="Resources\VS17\File_16x.png" />
+    <Resource Include="Resources\VS17\FolderOpen_16x.png" />
+    <Resource Include="Resources\VS17\Folder_16x.png" />
+    <Resource Include="Resources\VS17\Image_16x.png" />
+    <Resource Include="Resources\VS17\JSONFile_16x.png" />
+    <Resource Include="Resources\VS17\Log_16x.png" />
+    <Resource Include="Resources\VS17\LuaFile_16x.png" />
+    <Resource Include="Resources\VS17\MarkdownFile_16x.png" />
+    <Resource Include="Resources\VS17\NewFile_16x.png" />
+    <Resource Include="Resources\VS17\NewImage_16x.png" />
+    <Resource Include="Resources\VS17\NewSolutionFolder_16x.png" />
+    <Resource Include="Resources\VS17\Open_16x.png" />
+    <Resource Include="Resources\VS17\Output_16x.png" />
+    <Resource Include="Resources\VS17\Paste_16x.png" />
+    <Resource Include="Resources\VS17\Property_16x.png" />
+    <Resource Include="Resources\VS17\Reference_16x.png" />
+    <Resource Include="Resources\VS17\Rename_16x.png" />
+    <Resource Include="Resources\VS17\Run_16x.png" />
+    <Resource Include="Resources\VS17\Stop_16x.png" />
+    <Resource Include="Resources\VS17\TextFile_16x.png" />
+    <Resource Include="Resources\VS17\ZipFileError_16x.png" />
+    <Resource Include="Resources\VS17\ZipFileWarning_16x.png" />
+    <Resource Include="Resources\VS17\ZipFile_16x.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AvalonEdit" Version="6.0.0" />
+    <PackageReference Include="Dirkster.AvalonDock" Version="3.5.13" />
+    <PackageReference Include="Dirkster.AvalonDock.Themes.Aero" Version="3.5.12" />
+    <PackageReference Include="Dirkster.AvalonDock.Themes.Metro" Version="3.5.13" />
+    <PackageReference Include="Dirkster.AvalonDock.Themes.VS2010" Version="3.5.13" />
+    <PackageReference Include="Dirkster.AvalonDock.Themes.VS2013" Version="3.5.13" />
+    <PackageReference Include="DiscordRichPresence" Version="1.0.121" />
+    <PackageReference Include="FirebaseStorage.net" Version="1.0.3" />
+    <PackageReference Include="Gemini.Modules.CodeEditor" Version="0.7.0" />
+    <PackageReference Include="Gemini.Modules.GraphEditor" Version="0.7.0" />
+    <PackageReference Include="Gemini.Modules.Inspector" Version="0.7.0" />
+    <PackageReference Include="Gemini.Modules.Output" Version="0.7.0" />
+    <PackageReference Include="GeminiWpf" Version="0.7.0" />
+    <PackageReference Include="gong-wpf-dragdrop" Version="2.1.0" />
+    <PackageReference Include="HtmlAgilityPack" Version="1.11.16" />
+    <PackageReference Include="Microsoft.Extensions.Caching.Memory" Version="3.0.0" />
+    <PackageReference Include="Microsoft.SqlServer.Compact" Version="4.0.8876.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3-beta2" />
+    <PackageReference Include="Ookii.Dialogs.Wpf" Version="1.1.0" />
+    <PackageReference Include="PCLExt.FileStorage-devel" Version="1.5.0.275" />
+    <PackageReference Include="RestSharp" Version="106.6.10" />
+    <PackageReference Include="Salaros.ConfigParser" Version="0.3.4-preview1" />
+    <PackageReference Include="SixLabors.ImageSharp" Version="1.0.0-beta0007" />
+    <PackageReference Include="Steamworks.NET-Standalone" Version="13.0.0.15" />
+    <PackageReference Include="System.ComponentModel.Composition" Version="4.6.0" />
+    <PackageReference Include="System.Drawing.Common" Version="4.6.0" />
+    <PackageReference Include="System.IO.Compression" Version="4.3.0" />
+    <PackageReference Include="System.ComponentModel.Composition.Registration" Version="4.6.0" />
+    <PackageReference Include="SystemInfoLibrary-devel" Version="1.5.0.25" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Properties\Settings.Designer.cs">
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,15 @@
+﻿Make it read Logs and show it in output:
+--------------------
+log() will print to the factorio-current log file.
+print() will print to the console
+game.write_file("name", contents) will write to the name file in factorio/script-output folder (only available from runtime (control) stage)
+
+
+local some_table = {"a", "b", "c")
+print(serpent.block(some_table)) -- Prints the table out with with table ID's
+print(serpent.block(some_table, {comment=false})) -- Prints the table out without table ID's
+--------------------
+
+
+TODO:
+ * Uplodad mod to mods.factorio

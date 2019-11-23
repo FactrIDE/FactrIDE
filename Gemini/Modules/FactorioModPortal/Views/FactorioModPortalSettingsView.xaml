@@ -1,0 +1,42 @@
+﻿<UserControl x:Class="FactrIDE.Gemini.Modules.Factorio.Views.FactorioModPortalSettingsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:p="clr-namespace:FactrIDE.Properties"
+             xmlns:l="http://gu.se/Localization"
+             l:ErrorHandling.Mode="ReturnErrorInfoPreserveNeutral"
+             xmlns:converters="clr-namespace:Gemini.Modules.MainMenu.Converters;assembly=Gemini"
+             xmlns:viewModels="clr-namespace:FactrIDE.Gemini.Modules.Factorio.ViewModels"
+             mc:Ignorable="d"
+             Loaded="UserControl_Loaded"
+             d:DataContext="{d:DesignInstance viewModels:FactorioSettingsViewModel}"
+             d:DesignHeight="300" d:DesignWidth="350">
+    <UserControl.Resources>
+        <converters:CultureInfoNameConverter x:Key="CultureInfoNameConverter" />
+    </UserControl.Resources>
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="8" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="8" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="8" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="8" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+
+        <CheckBox x:Name="CheckBoxUseFactorioCredentials" Grid.Column="0" Grid.Row="0" IsChecked="{Binding UseFactorioCredentials}" Content="{l:Static p:Resources.CheckBoxUseFactorioCredentials}" Click="OnCheckBoxClick" Margin="0 0 16 0"/>
+        <TextBlock Grid.Column="0" Grid.Row="2" Text="{l:Static p:Resources.TextBlockUsername}" Margin="0 0 16 0"/>
+        <TextBlock Grid.Column="0" Grid.Row="4" Text="{l:Static p:Resources.TextBlockPassword}" Margin="0 0 16 0" />
+        <TextBox x:Name="TextBoxUsername" Text="{Binding Username, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Grid.Row="2" Width="400"/>
+        <PasswordBox x:Name="TextBoxPassword" PasswordChanged="PasswordBox_PasswordChanged" Grid.Column="1" Grid.Row="4" Width="400"/>
+    </Grid>
+</UserControl>
